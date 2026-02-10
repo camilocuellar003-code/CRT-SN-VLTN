@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fondo Animado</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden; /* Evita que aparezcan barras de scroll */
+        }
+
+        /* Configuración del fondo con degradado difuminado */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom, 
+                black 0%, 
+                #d8b4fe 50%, 
+                #ff99cc 100%
+            );
+            z-index: -1;
+        }
+
+        /* Estilo para los emojis que flotan */
+        .emoji {
+            position: absolute;
+            font-size: 2rem;
+            user-select: none;
+            pointer-events: none;
+            animation: float 15s linear infinite;
+            opacity: 0.8;
+        }
+
+        /* Animación para que se muevan por todo el fondo */
+        @keyframes float {
+            0% {
+                transform: translateY(110vh) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Posiciones aleatorias aproximadas para los emojis */
+        .emoji:nth-child(1) { left: 10%; animation-duration: 12s; animation-delay: 0s; }
+        .emoji:nth-child(2) { left: 30%; animation-duration: 18s; animation-delay: 2s; }
+        .emoji:nth-child(3) { left: 50%; animation-duration: 15s; animation-delay: 4s; }
+        .emoji:nth-child(4) { left: 70%; animation-duration: 20s; animation-delay: 1s; }
+        .emoji:nth-child(5) { left: 90%; animation-duration: 14s; animation-delay: 3s; }
+        .emoji:nth-child(6) { left: 20%; animation-duration: 16s; animation-delay: 5s; }
+        .emoji:nth-child(7) { left: 80%; animation-duration: 19s; animation-delay: 6s; }
+
+    </style>
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <div class="emoji">👑</div>
+    <div class="emoji">💖</div>
+    <div class="emoji">🌷</div>
+    <div class="emoji">👑</div>
+    <div class="emoji">🌸</div>
+    <div class="emoji">💗</div>
+    <div class="emoji">🌷</div>
+    <div class="emoji">👑</div>
+    <div class="emoji">🌺</div>
+    <div class="emoji">💖</div>
+
+    <div style="color: white; text-align: center; padding-top: 20%; font-family: sans-serif;">
+        
+
+</body>
+</html>
